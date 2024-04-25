@@ -1,5 +1,5 @@
 import { Currency, Fraction, Percent, Price, sortedInsert, CurrencyAmount, TradeType, Token } from '@nathan2024/up-sdk-core'
-import { Pair } from '@uniswap/v2-sdk'
+import { Pair } from '@nathan2024/up-v2-sdk'
 import { BestTradeOptions, Pool } from '@nathan2024/up-v3-sdk'
 import invariant from 'tiny-invariant'
 import { ONE, ZERO } from '../../constants'

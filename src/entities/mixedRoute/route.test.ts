@@ -2,7 +2,7 @@ import { Ether, Token, WETH9, CurrencyAmount, Currency } from '@nathan2024/up-sd
 import { Route as V3RouteSDK, Pool, FeeAmount, TickMath, encodeSqrtRatioX96 } from '@nathan2024/up-v3-sdk'
 import { MixedRoute, RouteV3 } from '../route'
 import { Protocol } from '../protocol'
-import { Route as V2RouteSDK, Pair } from '@uniswap/v2-sdk'
+import { Route as V2RouteSDK, Pair } from '@nathan2024/up-v2-sdk'
 import { MixedRouteSDK } from './route'
 import { partitionMixedRouteByProtocol } from '../../utils'
 

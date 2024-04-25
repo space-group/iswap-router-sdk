@@ -1,6 +1,6 @@
 // entities/route.ts
 
-import { Route as V2RouteSDK, Pair } from '@uniswap/v2-sdk'
+import { Route as V2RouteSDK, Pair } from '@nathan2024/up-v2-sdk'
 import { Route as V3RouteSDK, Pool } from '@nathan2024/up-v3-sdk'
 import { Protocol } from './protocol'
 import { Currency, Price, Token } from '@nathan2024/up-sdk-core'
