@@ -1,7 +1,7 @@
 import { Interface } from '@ethersproject/abi'
-import { Percent, Token, validateAndParseAddress } from '@uniswap/sdk-core'
+import { Percent, Token, validateAndParseAddress } from '@nathan2024/up-sdk-core'
 import { abi } from '@uniswap/swap-router-contracts/artifacts/contracts/interfaces/IPeripheryPaymentsWithFeeExtended.sol/IPeripheryPaymentsWithFeeExtended.json'
-import { FeeOptions, Payments, toHex } from '@uniswap/v3-sdk'
+import { FeeOptions, Payments, toHex } from '@nathan2024/up-v3-sdk'
 import JSBI from 'jsbi'
 
 function encodeFeeBips(fee: Percent): string {
