@@ -12,7 +12,7 @@ import {
   nearestUsableTick,
   encodeSqrtRatioX96,
 } from '@nathan2024/up-v3-sdk'
-import { Pair, Route as V2RouteSDK } from '@uniswap/v2-sdk'
+import { Pair, Route as V2RouteSDK } from '@nathan2024/up-v2-sdk'
 import { MixedRouteSDK } from './mixedRoute/route'
 
 describe('Trade', () => {

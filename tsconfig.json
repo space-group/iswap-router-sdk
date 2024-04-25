@@ -1,6 +1,9 @@
 {
   "include": ["src"],
   "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]  // 这里需要配置
+    },
     "target": "es2018",
     "module": "esnext",
     "importHelpers": true,

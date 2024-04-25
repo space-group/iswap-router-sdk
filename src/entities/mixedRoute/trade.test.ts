@@ -1,5 +1,5 @@
 import { Percent, Price, sqrt, Token, CurrencyAmount, TradeType, WETH9, Ether, Currency } from '@nathan2024/up-sdk-core'
-import { Pair } from '@uniswap/v2-sdk'
+import { Pair } from '@nathan2024/up-v2-sdk'
 import { encodeSqrtRatioX96, FeeAmount, nearestUsableTick, Pool, TickMath, TICK_SPACINGS } from '@nathan2024/up-v3-sdk'
 import JSBI from 'jsbi'
 import { MixedRouteSDK } from './route'

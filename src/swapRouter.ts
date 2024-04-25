@@ -1,7 +1,7 @@
 import { Interface } from '@ethersproject/abi'
 import { Currency, CurrencyAmount, Percent, TradeType, validateAndParseAddress, WETH9 } from '@nathan2024/up-sdk-core'
 import { abi } from '@uniswap/swap-router-contracts/artifacts/contracts/interfaces/ISwapRouter02.sol/ISwapRouter02.json'
-import { Trade as V2Trade } from '@uniswap/v2-sdk'
+import { Trade as V2Trade } from '@nathan2024/up-v2-sdk'
 import {
   encodeRouteToPath,
   FeeOptions,

@@ -1,5 +1,5 @@
 import { BigintIsh, CurrencyAmount, Ether, Percent, Token, TradeType, WETH9 } from '@nathan2024/up-sdk-core'
-import { Pair, Route as V2Route, Trade as V2Trade } from '@uniswap/v2-sdk'
+import { Pair, Route as V2Route, Trade as V2Trade } from '@nathan2024/up-v2-sdk'
 import {
   encodeSqrtRatioX96,
   FeeAmount,
