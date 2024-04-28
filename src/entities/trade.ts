@@ -108,7 +108,7 @@ export class Trade<TInput extends Currency, TOutput extends Currency, TTradeType
         if (pool instanceof Pool) {
           poolAddressSet.add(Pool.getAddress(pool.token0, pool.token1, (pool as Pool).fee))
           continue
-        }  
+        }
         if (pool instanceof Pair) {
           const pair = pool
           poolAddressSet.add(Pair.getAddress(pair.token0, pair.token1))
