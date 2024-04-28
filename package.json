@@ -3,7 +3,8 @@
   "version": "1.9.0",
   "description": "An sdk for routing swaps using Uniswap v2 and Uniswap v3.",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://nexus.byxxs.com/repository/npm-hosted/"
   },
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
