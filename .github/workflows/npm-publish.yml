@@ -3,7 +3,7 @@ name: CI/CD
 on:
   push:
     branches:
-      - main  # 触发主分支的推送事件
+      - bitlayer  # 触发主分支的推送事件
 
 jobs:
   build:
