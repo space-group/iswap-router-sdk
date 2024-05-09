@@ -1,35 +1,54 @@
-name: CI/CD
+name: Lint
 
 on:
   push:
     branches:
-      - main  # 触发主分支的推送事件
+      - release
+  pull_request:
 
 jobs:
-  build:
-    environment: npm
+  run-linters:
+    name: Run linters
     runs-on: ubuntu-latest
-    
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Set up node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: nightly
+
+      # needed to generate abi
+      - name: Build solidity
+        run: forge build
+
+      - name: build
+        run: yarn build
+
+      - name: cp
+        run: mkdir dist2|cp -r dist dist2/dist
       
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '20'
-        registry-url: 'https://registry.npmjs.org/'  # 设置 npm registry 地址
-        
-    - name: Install dependencies
-      run: yarn install
-      
-    - name: Run tests
-      run: yarn test
-      
-    - name: Build
-      run: yarn build
-      
-    - name: Publish to npm
-      run: yarn publish --access public
-      env:
-        NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+      - name: Deploy to dist branch
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: dist # 部署的目标分支
+          folder: dist2 # 要部署的目录
+
+      - name: Create Release Tag
+        if: success()
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git tag -a v${{ github.sha }} -m "Automated release from commit ${{ github.sha }}"
+          git push origin v${{ github.sha }}
