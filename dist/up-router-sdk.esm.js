@@ -1941,7 +1941,7 @@ var Trade = /*#__PURE__*/function () {
           var pair = pool;
           poolAddressSet.add(Pair.getAddress(pair.token0, pair.token1));
         } else {
-          throw new Error('Unexpected pool type in route when constructing trade object');
+          throw new Error('Unexpected pool type in route when constructing trade object' + JSON.stringify(pool));
         }
       }
     }
